@@ -41,27 +41,27 @@ function App() {
   return (
     <div>
       <input type="button" value="連線" onClick={connectWebSocket} />
-      <input
+      {/* <input
         type="button"
         value="送出訊息，只有自己收到回傳"
         onClick={() => {
           sendMessage("getMessage");
         }}
-      />
-      <input
+      /> */}
+      {/* <input
         type="button"
         value="送出訊息，讓所有人收到回傳"
         onClick={() => {
           sendMessage("getMessageAll");
         }}
-      />
-      <input
+      /> */}
+      {/* <input
         type="button"
         value="送出訊息，除了自己外所有人收到回傳"
         onClick={() => {
           sendMessage("getMessageLess");
         }}
-      />
+      /> */}
     </div>
   );
 }
