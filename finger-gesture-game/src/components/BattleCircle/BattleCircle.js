@@ -1,46 +1,29 @@
 import "components/BattleCircle/BattleCircle.css";
+import ConditionLabel from "components/ConditionLabel/ConditionLabel";
 
 function BattleCircle(props) {
-  const { style, imgUrl, text, conditionDirection, condition } = props;
+  const {
+    style,
+    imgUrl,
+    text,
+    conditionDirection,
+    condition,
+    ConditionLabelStyle,
+  } = props;
   return (
     <div className="battle-container" style={style}>
       <div className="battle-warp">
-        {conditionDirection === "right" && (
-          <div className="battle-condition-container">
-            <span className="battle-condition-warp">
-              <p>
-                What!
-                {condition === "win"
-                  ? "win!"
-                  : condition === "lose"
-                  ? "lose!"
-                  : condition === "tie" && "what!"}
-              </p>
-            </span>
-            <div class="triangle-1"></div>
-          </div>
-        )}
         <div className="battle-circle">
           <div className="battle-inside-circle">
             <img src={imgUrl} className="battle-img"></img>
           </div>
         </div>
         <h3 className="battle-txt flex">{text}</h3>
-        {conditionDirection === "left" && (
-          <div className="battle-condition-container">
-            <span className="battle-condition-warp">
-              <p>
-                What!
-                {condition === "win"
-                  ? "win!"
-                  : condition === "lose"
-                  ? "lose!"
-                  : condition === "tie" && "what!"}
-              </p>
-            </span>
-            <div class="triangle-1"></div>
-          </div>
-        )}
+        <ConditionLabel
+          conditionDirection={conditionDirection}
+          condition={condition}
+          style={ConditionLabelStyle}
+        />
       </div>
     </div>
   );

@@ -23,13 +23,22 @@ body {
   margin: auto;
 }
 
-.connect-btn-warp > h1{
+.connect-btn-warp > h1 {
   font-size: 50px;
   color: #ffa058;
 }
 
 .battle-room-warp {
   justify-content: space-between;
+}
+
+.hint-container {
+  align-items: center;
+}
+
+.hint-wrap > h5{
+  color: #c97230;
+  font-size: 22px;
 }
 
 .option-btn-warp {

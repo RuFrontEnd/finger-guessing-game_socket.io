@@ -1,0 +1,49 @@
+.flex {
+  display: flex;
+}
+
+.battle-condition-container {
+  position: absolute;
+  top: 0;
+}
+
+.battle-condition-container-right {
+  right: -100px;
+}
+
+.battle-condition-container-left {
+  left: -100px;
+}
+
+.battle-condition-warp {
+  position: relative;
+  display: inline-block;
+  background-color: #ffa058;
+  border-radius: 15px;
+  z-index: 2;
+}
+
+.battle-condition-warp > p {
+  color: white;
+  font-size: 30px;
+  padding: 15px 20px;
+  margin: 0px;
+}
+
+.triangle-1 {
+  border-color: #ffa058 transparent transparent transparent;
+  border-style: solid solid solid solid;
+  border-width: 45px 45px 0px 0px;
+  position: absolute;
+}
+
+.triangle-right {
+  bottom: -20px;
+  left: 10px;
+}
+
+.triangle-left {
+  bottom: -20px;
+  left: 60px;
+  transform: scaleX(-1);
+}

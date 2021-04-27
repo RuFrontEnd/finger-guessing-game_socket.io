@@ -35,33 +35,3 @@
   font-size: 30px;
   color: #ffa058;
 }
-
-.battle-condition-container {
-  position: absolute;
-  top: 0;
-  right: -100px;
-}
-
-.battle-condition-warp {
-  position: relative;
-  display: inline-block;
-  background-color: #ffa058;
-  border-radius: 15px;
-  z-index: 2;
-}
-
-.battle-condition-warp > p {
-  color: white;
-  font-size: 30px;
-  padding: 15px 20px;
-  margin: 0px;
-}
-
-.triangle-1 {
-  border-color: #ffa058 transparent transparent transparent;
-  border-style: solid solid solid solid;
-  border-width: 45px 45px 0px 0px;
-  position: absolute;
-  bottom: -20px;
-  left: 10px;
-}

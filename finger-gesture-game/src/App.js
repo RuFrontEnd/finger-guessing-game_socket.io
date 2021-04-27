@@ -32,12 +32,12 @@ function App() {
   };
 
   //選擇聊天室時觸發，如果有選擇那就將房間 id 送給 Server
-  const changeRoom = (event) => {
-    let room = event.target.innerHTML;
-    if (room !== "") {
-      ws.emit("addRoom", room);
-    }
-  };
+  // const changeRoom = (event) => {
+  //   let room = event.target.innerHTML;
+  //   if (room !== "") {
+  //     ws.emit("addRoom", room);
+  //   }
+  // };
 
   useEffect(() => {
     // if (ws) {
@@ -58,10 +58,21 @@ function App() {
         </section>
         <section className="battle-room-container">
           <div className="battle-room-warp flex">
-            <BattleCircle imgUrl={scissors} text={"ROCK"} />
-            <div className="room-container flex">
-              <ul className="room-warp">
-                <li
+            <BattleCircle
+              imgUrl={scissors}
+              text={"ROCK"}
+              conditionDirection={"right"}
+              condition={"tie"}
+            />
+            <section className="hint-container flex">
+              <div className="hint-wrap">
+                <h5>3 seconds later in the next round...</h5>
+              </div>
+            </section>
+            {/* <div className="room-container flex">
+              <ul className="room-warp"> */}
+            {/* NEXT STAGE AFTER 3 SECONDS */}
+            {/* <li
                   onClick={(event) => {
                     changeRoom(event);
                   }}
@@ -95,10 +106,15 @@ function App() {
                   }}
                 >
                   Room05
-                </li>
-              </ul>
-            </div>
-            <BattleCircle imgUrl={scissors} text={"ROCK"} />
+                </li> */}
+            {/* </ul>
+            </div> */}
+            <BattleCircle
+              imgUrl={scissors}
+              text={"ROCK"}
+              conditionDirection={"left"}
+              condition={"tie"}
+            />
           </div>
         </section>
         <section className="option-btn-container flex">
