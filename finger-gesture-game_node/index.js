@@ -45,4 +45,12 @@ io.on("connection", (socket) => {
   socket.on("getMessageLess", (message) => {
     socket.broadcast.emit("getMessageLess", message);
   });
+  
+  socket.on("addRoom", (room) => {
+    socket.join(room);
+    //(1)發送給在同一個 room 中除了自己外的 Client
+    socket.to(room).emit("addRoom", "已有新人加入聊天室！");
+    //(2)發送給在 room 中所有的 Client
+    io.sockets.in(room).emit("addRoom", "已加入聊天室！");
+  });
 });
