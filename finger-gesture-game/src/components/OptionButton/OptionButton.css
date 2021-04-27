@@ -1,0 +1,46 @@
+.flex {
+  display: flex;
+}
+
+.option-container{
+  margin-top: 20px;
+}
+
+.option-circle {
+  background-color: #ffa058;
+  border: 5px solid #c97230;
+  /* here */
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.option-warp {
+  position: relative;
+}
+
+.option-warp > h3 {
+  justify-content: center;
+  /* here */
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.option-inside-circle {
+  background-color: white;
+  border: 5px solid #c97230;
+  border-radius: 50%;
+  /* here */
+  padding: 15px;
+}
+
+.option-img {
+  /* here */
+  width: 35px;
+}
+
+.option-txt {
+  /* here */
+  font-size: 15px;
+  color: #ffa058;
+}
