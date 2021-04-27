@@ -50,9 +50,34 @@ function App() {
   }, [ws]);
 
   return (
-    <div className="container">
+    <div className="container flex">
       <div className="warp">
-        <input type="button" value="連線" onClick={connectWebSocket} />
+        <section className="connect-btn-container flex">
+          <div className="connect-btn-warp">
+            <input id="connect-btn" type="button" value="connect" onClick={connectWebSocket} />
+            <input id="disConnect-btn" type="button" value="disConnect" />
+          </div>
+        </section>
+        <section className="battle-room-container">
+          <div className="battle-room-warp flex">
+            <div className="enemy-container">
+              <div className="enemy-warp">123</div>
+            </div>
+            <div className="room-container">
+              <div className="room-warp">123</div>
+            </div>
+            <div className="me-container">
+              <div className="me-warp">123</div>
+            </div>
+          </div>
+        </section>
+        <section className="option-btn-container flex">
+          <section className="option-btn-warp flex">
+            <div className="rock">rock</div>
+            <div className="paper">paper</div>
+            <div className="scissors">scissors</div>
+          </section>
+        </section>
         {/* <input
       <select
         onChange={(event) => {
@@ -91,8 +116,6 @@ function App() {
           sendMessage("getMessageLess");
         }}
       /> */}
-        <div>123</div>
-        <div>123</div>
       </div>
     </div>
   );

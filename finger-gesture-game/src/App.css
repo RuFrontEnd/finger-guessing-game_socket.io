@@ -1,8 +1,65 @@
-.container{
-  margin: 0px 135px;
-  background-color: red;
+.flex {
+  display: flex;
 }
 
-.warp{
+.container {
+  margin: 0px 135px;
   padding: 30px 20px;
+  box-sizing: border-box;
+  background-color: rgb(255, 153, 153);
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.warp {
+  background-color: rgb(167, 189, 255);
+}
+
+.connect-btn-container {
+  background-color: saddlebrown;
+  padding: 40px 0px;
+}
+
+.connect-btn-warp {
+  margin: auto;
+}
+
+.battle-room-container {
+  background-color: salmon;
+}
+
+.battle-room-warp {
+  justify-content: space-between;
+}
+
+.option-btn-container {
+  background-color: saddlebrown;
+}
+
+.option-btn-warp {
+  margin: auto;
+}
+
+#connect-btn{
+  background-color: white;
+  border: 1px solid #FFA058;
+  color: #FFA058;
+  font-size: 25px;
+  border: none;
+  padding: 20px 45px;
+  margin-right: 20px;
+  box-sizing: border-box;
+  border-radius: 48px;
+}
+
+#disConnect-btn{
+  background-color: white;
+  border: 1px solid #FFA058;
+  color: #FFA058;
+  font-size: 25px;
+  border: none;
+  padding: 20px 28px;
+  box-sizing: border-box;
+  border-radius: 48px;
 }
