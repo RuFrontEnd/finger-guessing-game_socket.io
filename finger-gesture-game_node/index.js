@@ -28,13 +28,21 @@ server.listen(5000, () => {
 
 io.on("connection", (socket) => {
   //經過連線後在 console 中印出訊息
-  console.log("success connect!");
+  console.log("server success connect!");
+
   //監聽透過 connection 傳進來的事件
+  /*只回傳給發送訊息的 client*/
   socket.on("getMessage", (message) => {
-    //回傳 message 給發送訊息的 Client
     socket.emit("getMessage", message);
   });
+
+  /*回傳給所有連結著的 client*/
+  socket.on("getMessageAll", (message) => {
+    io.sockets.emit("getMessageAll", message);
+  });
+
+  /*回傳給除了發送者外所有連結著的 client*/
+  socket.on("getMessageLess", (message) => {
+    socket.broadcast.emit("getMessageLess", message);
+  });
 });
-// app.get("/", (req, res) => {
-//   res.send("A");
-// });
