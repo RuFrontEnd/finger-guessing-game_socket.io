@@ -12,7 +12,10 @@ function App() {
   };
 
   const initWebSocket = () => {
-    //對 getMessage 設定監聽，如果 server 有透過 getMessage 傳送訊息，將會在此被捕捉
+    // 對 addRoom / getMessage / getMessageAll / getMessageLess 設定監聽，如果 server 有透過 getMessage 傳送訊息，將會在此被捕捉
+    ws.on("addRoom", (message) => {
+      console.log(message);
+    });
     ws.on("getMessage", (message) => {
       console.log(message);
     });
@@ -25,8 +28,16 @@ function App() {
   };
 
   const sendMessage = (name) => {
-    //以 emit 送訊息，並以 getMessage 為名稱送給 server 捕捉
+    //以 emit 送訊息，並以 getMessage / getMessageAll / getMessageLess 為名稱送給 server 捕捉
     ws.emit(name, "發送訊息");
+  };
+
+  //選擇聊天室時觸發，如果有選擇那就將房間 id 送給 Server
+  const changeRoom = (event) => {
+    let room = event.target.value;
+    if (room !== "") {
+      ws.emit("addRoom", room);
+    }
   };
 
   useEffect(() => {
@@ -39,29 +50,50 @@ function App() {
   }, [ws]);
 
   return (
-    <div>
-      <input type="button" value="連線" onClick={connectWebSocket} />
-      {/* <input
+    <div className="container">
+      <div className="warp">
+        <input type="button" value="連線" onClick={connectWebSocket} />
+        {/* <input
+      <select
+        onChange={(event) => {
+          changeRoom(event);
+        }}
+      >
+        <option value="">請選擇房間</option>
+        <option value="room1">房間一</option>
+        <option value="room2">房間二</option>
+      </select>
+      <input
+        type="button"
+        value="連線"
+        onClick={() => {
+          connectWebSocket();
+        }}
+      />
+      <input
         type="button"
         value="送出訊息，只有自己收到回傳"
         onClick={() => {
           sendMessage("getMessage");
         }}
       /> */}
-      {/* <input
+        {/* <input
         type="button"
         value="送出訊息，讓所有人收到回傳"
         onClick={() => {
           sendMessage("getMessageAll");
         }}
       /> */}
-      {/* <input
+        {/* <input
         type="button"
         value="送出訊息，除了自己外所有人收到回傳"
         onClick={() => {
           sendMessage("getMessageLess");
         }}
       /> */}
+        <div>123</div>
+        <div>123</div>
+      </div>
     </div>
   );
 }
