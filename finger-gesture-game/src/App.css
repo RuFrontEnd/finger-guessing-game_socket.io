@@ -32,11 +32,23 @@ body {
   justify-content: space-between;
 }
 
+.battle-room-turn {
+  position: absolute;
+  border-color: #c97230 transparent transparent transparent;
+  border-style: solid solid solid solid;
+  border-width: 30px 20px 30px 20px;
+  height: 0px;
+  width: 0px;
+  top: -20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .hint-container {
   align-items: center;
 }
 
-.hint-wrap > h5{
+.hint-wrap > h5 {
   color: #c97230;
   font-size: 22px;
 }

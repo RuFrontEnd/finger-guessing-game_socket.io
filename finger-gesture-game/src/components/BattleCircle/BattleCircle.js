@@ -9,6 +9,7 @@ function BattleCircle(props) {
     conditionDirection,
     condition,
     ConditionLabelStyle,
+    children,
   } = props;
   return (
     <div className="battle-container" style={style}>
@@ -24,6 +25,7 @@ function BattleCircle(props) {
           condition={condition}
           style={ConditionLabelStyle}
         />
+        {children}
       </div>
     </div>
   );
